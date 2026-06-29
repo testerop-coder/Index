@@ -318,7 +318,7 @@ export default function Home() {
         style={{ background: "rgba(13,17,23,0.96)", backdropFilter: "blur(12px)", borderBottom: "1px solid rgba(255,255,255,0.05)" }}>
         <div className="flex items-center gap-2">
           <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-blue-500 to-cyan-400 flex items-center justify-center font-black text-black text-sm">A</div>
-          <span className="text-white font-black text-base">अनिलॉट</span>
+          <span className="text-white font-black text-base">Anilot Hindi</span>
         </div>
         <button onClick={() => setMailOpen(true)}
           className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-sm font-semibold"
