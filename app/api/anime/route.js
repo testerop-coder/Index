@@ -1,4 +1,6 @@
-import clientPromise from "@/lib/mongodb";
+import clientPromise from "../../../lib/mongodb";
+
+export const dynamic = "force-dynamic"; // cache band - har baar fresh data
 
 export async function GET() {
   try {
