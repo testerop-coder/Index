@@ -1,7 +1,7 @@
 import "./globals.css";
 
 export const metadata = {
-  title: "AniIndex",
+  title: "Anilot Hindi",
   description: "Discover Your Favourite Anime",
 };
 
