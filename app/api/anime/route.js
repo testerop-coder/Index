@@ -7,7 +7,7 @@ export async function GET() {
     const client = await clientPromise;
     const col    = client.db("aniindex").collection("anime");
     const anime  = await col
-      .find({}, { projection: { _id: 1, title: 1, genres: 1, image_url: 1, watch_link: 1, views: 1, featured: 1, added_at: 1 } })
+      .find({}, { projection: { _id: 1, title: 1, genres: 1, image_url: 1, watch_link: 1, views: 1, featured: 1, buttons: 1, added_at: 1 } })
       .sort({ title: 1 })
       .toArray();
 
