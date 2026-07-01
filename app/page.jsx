@@ -309,7 +309,7 @@ export default function Home() {
       {/* Header floats over slider */}
       <div className="sticky top-0 z-40 flex items-center justify-between px-4 py-3" style={{ background: "transparent" }}>
         <div className="flex items-center gap-2">
-          <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-red-500 to-red-800 flex items-center justify-center font-black text-white text-sm">अ</div>
+          <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-red-500 to-red-800 flex items-center justify-center font-black text-white text-sm">❀</div>
           <span className="text-white font-black text-base" style={{ textShadow: "0 2px 8px rgba(0,0,0,0.8)" }}>Anilot Hindi</span>
         </div>
         <button onClick={() => setMailOpen(true)}
