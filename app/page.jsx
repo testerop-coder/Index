@@ -203,18 +203,22 @@ function DetailModal({ anime, onClose }) {
         <div className="w-full flex flex-col gap-2.5 pb-4">
           {(anime.buttons && anime.buttons.length > 0) ? (
             anime.buttons.map((btn, i) => (
-              <a key={i} href={btn.link || "#"} target="_blank" rel="noopener noreferrer"
-                className="w-full py-3.5 rounded-full text-sm font-black text-white text-center active:scale-95 transition-transform"
+              <button key={i}
+                onClick={() => { if (btn.link) window.open(btn.link, "_blank", "noopener,noreferrer"); }}
+                onContextMenu={e => e.preventDefault()}
+                className="w-full py-3.5 rounded-full text-sm font-black text-white text-center active:scale-95 transition-transform select-none"
                 style={{ background: BTN_COLORS[i % BTN_COLORS.length] }}>
                 ▶ {btn.name}
-              </a>
+              </button>
             ))
           ) : (
-            <a href={anime.watch_link || "#"} target="_blank" rel="noopener noreferrer"
-              className="w-full py-3.5 rounded-full text-sm font-black text-white text-center active:scale-95 transition-transform"
+            <button
+              onClick={() => { if (anime.watch_link) window.open(anime.watch_link, "_blank", "noopener,noreferrer"); }}
+              onContextMenu={e => e.preventDefault()}
+              className="w-full py-3.5 rounded-full text-sm font-black text-white text-center active:scale-95 transition-transform select-none"
               style={{ background: BTN_COLORS[0] }}>
               ▶ Watch Now
-            </a>
+            </button>
           )}
           <button onClick={onClose}
             className="w-full py-3 rounded-full text-sm font-bold text-gray-400 mt-1 active:scale-95 transition-transform"
@@ -304,15 +308,17 @@ export default function Home() {
       {/* Header floats over slider */}
       <div className="sticky top-0 z-40 flex items-center justify-between px-4 py-3" style={{ background: "transparent" }}>
         <div className="flex items-center gap-2">
-          <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-red-500 to-red-800 flex items-center justify-center font-black text-white text-sm">❀</div>
+          <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-red-500 to-red-800 flex items-center justify-center font-black text-white text-sm">A</div>
           <span className="text-white font-black text-base" style={{ textShadow: "0 2px 8px rgba(0,0,0,0.8)" }}>Anilot Hindi</span>
         </div>
-        <a href="https://t.me/Paiid_Ads_bot" target="_blank" rel="noopener noreferrer"
-          className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl"
+        <button
+          onClick={() => window.open("https://t.me/Paiid_Ads_bot", "_blank", "noopener,noreferrer")}
+          onContextMenu={e => e.preventDefault()}
+          className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl select-none"
           style={{ background: "rgba(0,0,0,0.4)" }}>
           <span className="text-sm">🛟</span>
-          <span className="text-white text-sm font-semibold">Request for Anime</span>
-        </a>
+          <span className="text-white text-sm font-semibold">Support</span>
+        </button>
       </div>
 
       {/* Loading */}
@@ -360,12 +366,14 @@ export default function Home() {
         {/* Ongoing Anime button */}
         {!loading && anime.length > 0 && (
           <div className="px-4 mt-3">
-            <a href="https://t.me/langda_aambot?start=req_LTEwMDI5MzI3NTczMDk" target="_blank" rel="noopener noreferrer"
-              className="w-full flex items-center justify-center gap-2 py-3 rounded-xl text-sm font-bold text-white active:scale-95 transition-transform"
+            <button
+              onClick={() => window.open("https://t.me/langda_aambot?start=req_LTEwMDI5MzI3NTczMDk", "_blank", "noopener,noreferrer")}
+              onContextMenu={e => e.preventDefault()}
+              className="w-full flex items-center justify-center gap-2 py-3 rounded-xl text-sm font-bold text-white active:scale-95 transition-transform select-none"
               style={{ background: "linear-gradient(135deg,#2AABEE,#229ED9)" }}>
               <span style={{ fontSize: 16 }}>📨</span>
               Ongoing Anime
-            </a>
+            </button>
           </div>
         )}
 
@@ -396,5 +404,5 @@ export default function Home() {
       {selected && <DetailModal anime={selected} onClose={() => setSelected(null)} />}
     </div>
   );
-    }
-          
+  }
+            
