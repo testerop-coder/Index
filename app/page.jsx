@@ -69,7 +69,9 @@ function CrunchySlider({ list, onSelect }) {
         <img
           src={a.image_url} alt={a.title} key={a._id}
           className="absolute inset-0 w-full h-full object-cover"
-          style={{ animation: "fadeIn 0.6s ease" }}
+          style={{ animation: "fadeIn 0.6s ease", WebkitTouchCallout: "none", WebkitUserSelect: "none", userSelect: "none" }}
+          draggable={false}
+          onContextMenu={e => e.preventDefault()}
           onError={e => { e.target.style.opacity = 0; }}
         />
       ) : (
@@ -137,6 +139,9 @@ function AnimeCard({ anime, onClick }) {
       {anime.image_url ? (
         <img src={anime.image_url} alt={anime.title}
           className="absolute inset-0 w-full h-full object-cover"
+          style={{ WebkitTouchCallout: "none", WebkitUserSelect: "none", userSelect: "none" }}
+          draggable={false}
+          onContextMenu={e => e.preventDefault()}
           onError={e => { e.target.style.display = "none"; }} />
       ) : (
         <div className="absolute inset-0 flex items-center justify-center overflow-hidden"
@@ -178,6 +183,9 @@ function DetailModal({ anime, onClose }) {
           {anime.image_url ? (
             <img src={anime.image_url} alt={anime.title}
               className="w-full h-full object-cover"
+              style={{ WebkitTouchCallout: "none", WebkitUserSelect: "none", userSelect: "none" }}
+              draggable={false}
+              onContextMenu={e => e.preventDefault()}
               onError={e => { e.target.style.opacity = 0.15; }} />
           ) : (
             <div className="w-full h-full flex items-center justify-center"
@@ -404,5 +412,5 @@ export default function Home() {
       {selected && <DetailModal anime={selected} onClose={() => setSelected(null)} />}
     </div>
   );
-  }
-            
+      }
+        
