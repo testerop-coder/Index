@@ -74,6 +74,10 @@ function CrunchySlider({ list, onSelect }) {
           onContextMenu={e => e.preventDefault()}
           onError={e => { e.target.style.opacity = 0; }}
         />
+          <div className="absolute inset-0" style={{ zIndex: 1 }}
+            onContextMenu={e => e.preventDefault()}
+            onTouchStart={e => e.stopPropagation()}
+          />
       ) : (
         <div className="absolute inset-0 flex items-center justify-center overflow-hidden"
           style={{ background: "linear-gradient(135deg,#3a0a0a,#0A0606)" }}>
@@ -143,6 +147,10 @@ function AnimeCard({ anime, onClick }) {
           draggable={false}
           onContextMenu={e => e.preventDefault()}
           onError={e => { e.target.style.display = "none"; }} />
+          <div className="absolute inset-0" style={{ zIndex: 1 }}
+            onContextMenu={e => e.preventDefault()}
+            onTouchStart={e => e.stopPropagation()}
+          />
       ) : (
         <div className="absolute inset-0 flex items-center justify-center overflow-hidden"
           style={{ background: "linear-gradient(180deg,#2a0808,#0A0606)" }}>
@@ -174,7 +182,7 @@ function DetailModal({ anime, onClose }) {
         onClick={e => e.stopPropagation()}>
 
         {/* Poster card */}
-        <div className="rounded-2xl overflow-hidden mb-5 flex-shrink-0"
+        <div className="relative rounded-2xl overflow-hidden mb-5 flex-shrink-0"
           style={{
             width: 190, height: 260,
             background: "#1A0F0F",
@@ -187,6 +195,10 @@ function DetailModal({ anime, onClose }) {
               draggable={false}
               onContextMenu={e => e.preventDefault()}
               onError={e => { e.target.style.opacity = 0.15; }} />
+            <div className="absolute inset-0" style={{ zIndex: 1 }}
+              onContextMenu={e => e.preventDefault()}
+              onTouchStart={e => e.stopPropagation()}
+            />
           ) : (
             <div className="w-full h-full flex items-center justify-center"
               style={{ background: "linear-gradient(180deg,#2a0808,#0A0606)" }}>
@@ -412,5 +424,5 @@ export default function Home() {
       {selected && <DetailModal anime={selected} onClose={() => setSelected(null)} />}
     </div>
   );
-      }
-        
+  }
+  
