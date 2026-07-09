@@ -66,18 +66,20 @@ function CrunchySlider({ list, onSelect }) {
     >
       {/* Full bleed image */}
       {a.image_url ? (
-        <img
-          src={a.image_url} alt={a.title} key={a._id}
-          className="absolute inset-0 w-full h-full object-cover"
-          style={{ animation: "fadeIn 0.6s ease", WebkitTouchCallout: "none", WebkitUserSelect: "none", userSelect: "none" }}
-          draggable={false}
-          onContextMenu={e => e.preventDefault()}
-          onError={e => { e.target.style.opacity = 0; }}
-        />
+        <>
+          <img
+            src={a.image_url} alt={a.title} key={a._id}
+            className="absolute inset-0 w-full h-full object-cover"
+            style={{ animation: "fadeIn 0.6s ease", WebkitTouchCallout: "none", WebkitUserSelect: "none", userSelect: "none" }}
+            draggable={false}
+            onContextMenu={e => e.preventDefault()}
+            onError={e => { e.target.style.opacity = 0; }}
+          />
           <div className="absolute inset-0" style={{ zIndex: 1 }}
             onContextMenu={e => e.preventDefault()}
             onTouchStart={e => e.stopPropagation()}
           />
+        </>
       ) : (
         <div className="absolute inset-0 flex items-center justify-center overflow-hidden"
           style={{ background: "linear-gradient(135deg,#3a0a0a,#0A0606)" }}>
@@ -141,16 +143,18 @@ function AnimeCard({ anime, onClick }) {
       className="relative flex-shrink-0 w-36 rounded-2xl overflow-hidden cursor-pointer active:scale-95 transition-transform duration-150"
       style={{ height: 215, background: "#1A0F0F", border: "1px solid rgba(255,45,45,0.12)" }}>
       {anime.image_url ? (
-        <img src={anime.image_url} alt={anime.title}
-          className="absolute inset-0 w-full h-full object-cover"
-          style={{ WebkitTouchCallout: "none", WebkitUserSelect: "none", userSelect: "none" }}
-          draggable={false}
-          onContextMenu={e => e.preventDefault()}
-          onError={e => { e.target.style.display = "none"; }} />
+        <>
+          <img src={anime.image_url} alt={anime.title}
+            className="absolute inset-0 w-full h-full object-cover"
+            style={{ WebkitTouchCallout: "none", WebkitUserSelect: "none", userSelect: "none" }}
+            draggable={false}
+            onContextMenu={e => e.preventDefault()}
+            onError={e => { e.target.style.display = "none"; }} />
           <div className="absolute inset-0" style={{ zIndex: 1 }}
             onContextMenu={e => e.preventDefault()}
             onTouchStart={e => e.stopPropagation()}
           />
+        </>
       ) : (
         <div className="absolute inset-0 flex items-center justify-center overflow-hidden"
           style={{ background: "linear-gradient(180deg,#2a0808,#0A0606)" }}>
@@ -189,16 +193,18 @@ function DetailModal({ anime, onClose }) {
             boxShadow: "0 20px 50px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,45,45,0.2)"
           }}>
           {anime.image_url ? (
-            <img src={anime.image_url} alt={anime.title}
-              className="w-full h-full object-cover"
-              style={{ WebkitTouchCallout: "none", WebkitUserSelect: "none", userSelect: "none" }}
-              draggable={false}
-              onContextMenu={e => e.preventDefault()}
-              onError={e => { e.target.style.opacity = 0.15; }} />
-            <div className="absolute inset-0" style={{ zIndex: 1 }}
-              onContextMenu={e => e.preventDefault()}
-              onTouchStart={e => e.stopPropagation()}
-            />
+            <>
+              <img src={anime.image_url} alt={anime.title}
+                className="w-full h-full object-cover"
+                style={{ WebkitTouchCallout: "none", WebkitUserSelect: "none", userSelect: "none" }}
+                draggable={false}
+                onContextMenu={e => e.preventDefault()}
+                onError={e => { e.target.style.opacity = 0.15; }} />
+              <div className="absolute inset-0" style={{ zIndex: 1 }}
+                onContextMenu={e => e.preventDefault()}
+                onTouchStart={e => e.stopPropagation()}
+              />
+            </>
           ) : (
             <div className="w-full h-full flex items-center justify-center"
               style={{ background: "linear-gradient(180deg,#2a0808,#0A0606)" }}>
@@ -424,5 +430,5 @@ export default function Home() {
       {selected && <DetailModal anime={selected} onClose={() => setSelected(null)} />}
     </div>
   );
-  }
-  
+          }
+                  
