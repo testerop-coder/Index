@@ -430,5 +430,5 @@ export default function Home() {
       {selected && <DetailModal anime={selected} onClose={() => setSelected(null)} />}
     </div>
   );
-          }
-                  
+        }
+    
