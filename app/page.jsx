@@ -331,8 +331,8 @@ export default function Home() {
       {/* Header floats over slider */}
       <div className="sticky top-0 z-40 flex items-center justify-between px-4 py-3" style={{ background: "transparent" }}>
         <div className="flex items-center gap-2">
-          <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-red-500 to-red-800 flex items-center justify-center font-black text-white text-sm">अ</div>
-          <span className="text-white font-black text-base" style={{ textShadow: "0 2px 8px rgba(0,0,0,0.8)" }}>अनिलॉट</span>
+          <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-red-500 to-red-800 flex items-center justify-center font-black text-white text-sm">A</div>
+          <span className="text-white font-black text-base" style={{ textShadow: "0 2px 8px rgba(0,0,0,0.8)" }}>Anilot Hindi</span>
         </div>
         <button
           onClick={() => window.open("https://t.me/Paiid_Ads_bot", "_blank", "noopener,noreferrer")}
@@ -390,7 +390,7 @@ export default function Home() {
         {!loading && anime.length > 0 && (
           <div className="px-4 mt-3">
             <button
-              onClick={() => window.open("https://t.me/One_piece_Egghead_Arc_in_hindi/517", "_blank", "noopener,noreferrer")}
+              onClick={() => window.open("https://t.me/langda_aambot?start=req_LTEwMDI5MzI3NTczMDk", "_blank", "noopener,noreferrer")}
               onContextMenu={e => e.preventDefault()}
               className="w-full flex items-center justify-center gap-2 py-3 rounded-xl text-sm font-bold text-white active:scale-95 transition-transform select-none"
               style={{ background: "linear-gradient(135deg,#2AABEE,#229ED9)" }}>
