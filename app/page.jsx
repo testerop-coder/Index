@@ -40,7 +40,7 @@ const CATEGORIES = ["All", "Fan", "Official", "Movie"];
 
 // Set this to your logo image URL to replace the "A" placeholder in the header.
 // Leave empty ("") to keep showing the letter.
-const LOGO_URL = "";
+const LOGO_URL = "https://files.catbox.moe/7s1nn7.jpg";
 
 // Category is auto-detected from the anime's download/watch button text:
 //   - any button name containing "movie" (case-insensitive)  -> "Movie"
