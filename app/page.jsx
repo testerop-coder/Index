@@ -485,7 +485,7 @@ export default function Home() {
         <div className="text-center py-20 px-8">
           <div className="text-5xl mb-3">🎌</div>
           <p className="text-white font-bold text-base">No anime found</p>
-          <p className="text-gray-500 text-sm mt-1">Add anime using the bot</p>
+          <p className="text-gray-500 text-sm mt-1">Add anime Soon..</p>
         </div>
       )}
 
